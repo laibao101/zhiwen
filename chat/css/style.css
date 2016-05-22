@@ -1,0 +1,136 @@
+body{ margin-top:50px; }
+#header{ color: white;}
+.header.navbar-default{ background: -webkit-linear-gradient(top,#0767c8,#0e78e7) }
+#header .logo.navbar-brand{ font-size:30px; font-weight:bold; color:white; }
+#header .logo.navbar-brand:hover{ color:white; }
+#header ul.navbar-nav li a{ color:white;}
+#header ul.navbar-nav:hover li a{ color:white; }
+#header span.input-group-addon{ background:#0e78e7; box-shadow: 0 1px 2px rgba(0,0,0,.05),inset 0 1px 1px rgba(255,255,255,.15); border:1px solid #ccc; }
+#header span.input-group-addon span{ color:white; }
+#header input.form-control{ background:#e1eaf2; }
+#header button{ margin-right:20px; background:#00A1FF;}
+
+#mid{ padding-top:20px;}
+#mid ul.nav-pills li{ background:#eff6fa; color:#259; border-radius:15px;  }
+#mid ul.nav-pills li a{ padding:5px;}
+#mid ul.nav-pills li:hover { background:#259; color:white;}
+#mid ul.nav-pills li:hover a{ padding:5px; }
+#mid div.jumbotron{ background:white; } 
+#mid hr{ margin-top:0;}
+#login, #reg, #question { width:340px; height:380px; border:1px solid #ddd; border-radius:6px; background: white; position: fixed; top:calc(20%); left:calc(40%);}
+#login div.jumbotron, #reg div.jumbotron, #side_reg div.jumbotron{ padding-top:10px; padding-bottom:10px; margin-bottom:5px; background:white; } 
+#login .list-group input, #reg .list-group input, #side_reg .list-group input{ width:100%; border: none; padding:0 10px; outline:none;}
+#login .list-group li,#reg .list-group li, #side_reg .list-group li{ padding:0; border-left:none; border-right:none; height:40px; line-height:40px; }
+#login .list-group input:last-child, #reg .list-group input:last-child, #side_reg .list-group input:last-child{ border-bottom:1px solid #ddd; }
+#login .btn,#reg .btn, #side_reg .btn{ background:#0767c8; color:white; outline: none;}
+#login .btn:hover, #reg .btn:hover, #side_reg .btn:hover{ background:#0e78e7; }
+#login .close, #reg .close{ position:relative; top:5px; left:0px; width:25px; height:25px; border-radius:50%;}
+#login .close:hover, #reg .close:hover ,#question .close:hover{ background: #ccc;}
+#login input[name=expires], #reg input[name=expires], #side_reg input[name=expires]{ position:relative; top:2px; margin: 5px; margin-left:250px;}
+#reg .list-group li:nth-of-type(4) .btn-group, #side_reg .list-group li:nth-of-type(4) .btn-group{ position:relative; top:-2px; }
+#reg label, #side_reg label{ margin-bottom:0; padding: 0 10px; color: #A9A9A9; font-size: 14px; font-weight: normal;}
+#reg .list-group li:nth-of-type(4) .btn-group .btn, #side_reg .list-group li:nth-of-type(4) .btn-group .btn{ background:#ddd; border:1px solid #ccc;}
+
+.container .jumbotron {      padding-right: 20px; padding-left: 40px;}
+.container .jumbotron p{ font-size:12px;}
+#question{ width: calc(50%); left: calc(20%); }
+#question form{ padding:0 20px; }
+#question form textarea{ resize:none;} 
+#question form textarea .side{ color: #ddd;}
+
+#reg_error .error, #side_reg_error .error, #login_error .error{ color: red;}
+
+#loadding {width:200px; height: 105px; line-height: 100px;background: #fff; border: 1px #ddd solid; border-radius: 6px; text-indent:25px;     position: fixed; top: calc(30%); left: calc(48%);}
+#loadding span{ background: url(../img/loading.gif) no-repeat right; padding: 35px;     }
+#side_reg{ border:1px solid #ddd; padding-bottom: 20px; border-radius:5px; }
+#side_reg .submit, #side_exit_btn{ width:92%; margin:0 auto;}
+.member li:first-child a span{ padding-right:5px;}
+.media .row p:first-child .pub_user{ padding:0 10px 0 25px; }
+.media .row p:first-child time{ padding-left:10px; }
+
+#upload_user_img{background: #fff; border-radius: 6px;position: fixed; top: calc(25%); left: calc(48%); width:400px;height: 400px;}
+
+
+.picture{ margin-right: 20px; position:relative; top:4px; }
+.comment{ border: 1px solid #ddd; margin-bottom:25px; border-radius:0 0 10px 10px; padding:20px 0;}
+.comment .row{ margin-left:10px; margin-right:10px; border-bottom:1px dotted #ddd; margin-bottom: 10px;}
+.comment  button.load, .comment  textarea{ width:98%; margin:10px auto; }
+.comment  textarea{ resize:none; }
+.comment  button{ outline:none; }
+.push{ margin-right:20px;}
+
+.load_con{ text-align: center; padding-bottom:30px;}
+.loadding{ background:url(../img/more_load.gif) no-repeat right; padding-right:100px; }
+#content .media .row .nav li:first-child { text-indent:5px; }
+
+
+/*用户自定义头像显示*/
+#header .user_img{background-size: 36px;padding-left: 40px;background-repeat: no-repeat;background-position: -10px center;}
+
+/*退出显示后，鼠标移过样式*/
+#header .member .exit:hover{ background: #00C4FF;}
+
+/*提问按钮，hover效果*/
+.question:hover{ color: #fdf59a; }
+
+
+/*显示用户信息*/
+#user-info .navbar-header{ width:100%;margin-bottom:2%; }
+#user-info .navbar-header:after{content: '';display: block;clear: both;}
+#user-info .navbar-brand img{ width: 44%;  margin:0 auto; }
+#user-info .navbar-brand { font-size:400%; width:100%; text-align:center; height:100%; }
+#side_member{ line-height: 250%; margin-left:10%;}
+#side_exit{float: right; margin-right: 10%}
+
+/*总共发布信息条数*/
+#all_question{ margin:5px auto; width:93%;}
+/*解决评论条数点击关闭后hover效果*/
+.comment_num:hover{ background:#eee;}
+
+
+
+/*日历*/
+#datetimepicker, #datetimepicker_side{ width:68%;display:inline-block; height: 100%}
+#datetimepicker input, #datetimepicker_side input{ width: 90%; height:90%}
+.datetimepicker_label{ margin-left: -14%;}
+.list-group-item .datetimepicker_label{margin-left: -18%;}
+/*调整右边栏表格问题*/
+tr td:first-child{text-indent: 10px;}
+
+/*页脚*/
+footer .navbar-default{background: -webkit-linear-gradient(top,#0767c8,#0e78e7); color:white;}
+
+@media  (min-width:768px ) {
+	#header div.input-group{ width:300px;}
+	#upload_user_img .thumbnail img{height:268px;}
+	#content .media .row .thumbnail img{height: 138px;}
+	#content .media .comment .thumbnail img{height: 138px;}
+}
+/*修改关闭按钮的样式*/
+button.close{width: 21px;height:21px;}
+button.close:hover{ border-radius: 50%; }
+span.close{width: 21px;height:21px;}
+span.close:hover{ border-radius: 50%; }
+
+@media (max-width: 768px){
+	body{ margin-top: 50px;}
+	.comment_num, .media h3, .media .nav li a{text-align: center;}
+	#header form { }
+	.toggle li{ width:48%;display:inline-block; text-align: center;}
+	.toggle button{width: 100%;}
+	#header button{ margin-right:0px;}
+	#reg, #login{ top: 10%;left:3%; width:100%;}
+	.navbar-toggle{ position: relative; left:-15px;}
+	#question{width:96%; left:2%; height: 46%;}
+	#loadding{ left:calc(23%);}
+	.add_submit{ position: relative; left:-5%;}
+	#header .user_img{padding-left: 20px; background-position: 8px center;}
+	#heaer .question{background: #5DAEFF;}
+	#loadding{ top:30%;left:25%;}
+	#upload_user_img{ width:100%; top:10%; height: 78%}
+	#upload_user_img .thumbnail img{ max-height: 270px;}
+	#footer h3{font-size:16px;}
+	#mobile_up_img{margin-bottom: 5px;}
+	.navbar-toggle{background: #0e78e7;}
+
+}

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>chat</title>
+		<script type="text/javascript" src="src/jsmin/jquery.min.js"></script>
+		<script type="text/javascript" src="src/jsmin/bootstrap.min.js"></script>
+		<script type="text/javascript" src="src/jsmin/bootstrap-datetimepicker.min.js"></script>
+		<script type="text/javascript" src="src/jsmin/bootstrap-datetimepicker.zh-CN.js"></script>
+		<script type="text/javascript" src="src/jsmin/form.min.js"></script>
+		<script type="text/javascript" src="src/jsmin/validate.min.js"></script>
+		<script type="text/javascript" src="src/jsmin/cookie.min.js"></script>
+		<link rel="stylesheet" href="src/cssmin/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="src/css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="src/cssmin/bootstrap-datetimepicker.min.css"/>
+		<!--<script type="text/javascript" src="src/jsmin/index.min.js"></script>-->
+		<script type="text/javascript" src="src/js/index.js"></script>
+
+	</head>
+	<body>
+		<!--导航-->
+		<nav class="navbar navbar-default navbar-fixed-top header" id="header">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="javascript:;" class="navbar-brand logo">知问</a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+				</div>
+                <div class="toggle  collapse navbar-collapse" id="navbar-collapse">
+				<form action=""   class="navbar-form navbar-left">
+					<div class="input-group">
+						<input type="text" class="form-control" placehoder="搜索"/>
+						<span class="input-group-addon"><a href="#"> <span class="glyphicon glyphicon-search"></span> </a></span>
+					</div>
+					
+				</form>
+				<ul class="nav navbar-nav navbar-left hidden-xs hidden-sm" >
+					<li><a href="javascript:;">首页</a></li>
+					<li><a href="javascript:;">话题</a></li>
+					<li><a href="javascript:;">发现</a></li>
+				</ul>
+
+                    <ul class="nav navbar-nav navbar-right reg">
+                        <li><a href="javascript:;" data-toggle="modal" data-target="#reg" class="user_img">
+                            <span class="glyphicon glyphicon-user" ></span>
+                            注册知问</a></li>
+                        <li><a href="javascript:;" data-toggle="modal" data-target="#login">登录</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right hide member">
+                        <li>
+                            <a href="javascript:;"  id="user_img" class="user_img">
+                                <!--<span class="glyphicon glyphicon-user"></span>-->
+                                会员</a></li>
+                        <li><a href="javascript:;" class="exit">退出</a></li>
+                    </ul>
+                    <button class="btn  navbar-btn navbar-right question" data-toggle="modal" >提问</button>
+                </div>
+
+			</div>
+		</nav>
+		
+		
+		<!--正文内容-->
+		<div id="mid" class="container">
+			<div class="row">
+				<div class="col-lg-9 col-md-9 col-xm-9">
+					<!--<ul class="nav nav-pills">
+						<li><a href="javascript:;" class="badge">减肥</a></li>
+						<li><a href="javascript:;" class="badge">恋爱</a></li>
+						<li><a href="javascript:;" class="badge">男朋友</a></li>
+					</ul>
+					<div class="jumbotron">
+						<h3>
+							有一个胖胖的男朋友是一种怎样的体验？_(´ཀ`」 ∠)_
+						</h3>
+					</div>
+					<div class="row">
+						<ul class="nav navbar-nav ">
+							<li><a href="javascript:;">
+								<span class="glyphicon glyphicon-comment"></span>
+								4条评论</a></li>
+							<li><a href="javascript:;">
+								<span class="glyphicon glyphicon-send"></span>
+								分享</a></li>
+						</ul>
+					</div>
+					
+					<hr />-->
+					<div id="content">
+
+					</div>
+				</div>
+				
+				
+				
+				<div class="col-lg-3 col-md-3 col-xm-3  hidden-xs">
+					<!--边栏注册，用户没有登录的时候就显示-->
+					<div id="side_reg" class=" ">
+						<div class=" jumbotron ">
+							<h3 class="text-center">注册知问</h3>
+							<p>与世界分享你的知识、经验和见解</p>
+						</div>
+						<form >
+							<ol id="side_reg_error"></ol>
+							<ul class="list-group">
+								<li class="list-group-item"><input type="text" id="side_user" name="user" placeholder="账号" autocomplete="off"/></li>
+								<li class="list-group-item"><input type="password"name="pass" placeholder="密码" autocomplete="off"/></li>
+								<li class="list-group-item"><input type="text" name="email" placeholder="邮箱"/></li>
+								<li class="list-group-item ">
+									<label for="" class="pull-left">性别</label>
+									<div class="btn-group choose">
+									  <button class="btn btn-default active" type="button"><input type="button" name="sex" value="男" checked="checked" /> </button>
+									 
+									  <button class="btn btn-default" type="button"><input type="button" name="sex" value="女"  /> </button>
+									  
+									</div>
+								
+								</li>
+								<li class="list-group-item">
+                                    <label for="" class="datetimepicker_label">生日</label>
+									<div class="input-append date" id="datetimepicker_side" data-date="2016-05-15" data-date-format="dd-mm-yyyy">
+									    <input class="span2 time" size="16"  type="text" placeholder="点击选择日期">
+									    <span class="add-on"><i class="icon-remove"></i></span>
+									    <span class="add-on"><i class="icon-th"></i></span>
+									</div>
+								</li>
+							</ul>
+							<button type="submit" class="btn btn-default btn-block submit">注册</button>
+						</form>
+						<button class="btn btn-default btn-block" id="side_exit_btn">已有账号？点击登录</button>
+					</div>
+
+					<!--用户登录后，就显示用户信息，用户退出后，就隐藏-->
+					<div id="user-info"  class="hide">
+
+						<div class="panel panel-info">
+							<div class="panel-heading">
+								<span>欢迎您</span>
+							</div>
+							<div class="panel-body">
+								<nav class="navbar navbar-default">
+									<div class="navbar-header">
+										<a href="javascript:;" class="navbar-brand">
+											<span class="glyphicon glyphicon-user"></span>
+											<a href="javascript:;" class="" id="side_member">会员名</a>
+											<button class="btn btn-default " id="side_exit">退出</button>
+										</a>
+									</div>
+									<button class="btn btn-primary btn-block" id="all_question" >
+										总共发布个问题：<span class="badge">10</span>
+									</button>
+									<div class="navbar-body">
+										<table class="table table-srtiped" id="show_all_title">
+											<thead>
+												<tr>
+													<th>序号</th>
+													<th class="text-center">问题</th>
+												</tr>
+											</thead>
+											<tbody>
+
+											</tbody>
+										</table>
+									</div>
+								</nav>
+
+
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--登录-->
+		<div class="container">
+			<div id="login"  class="modal fade in" >
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<div class=" jumbotron modal-title">
+					<h3 class="text-center">登录知问</h3>
+					<p>与世界分享你的知识、经验和见解</p>
+				</div>
+				<form action="">
+					<ol id="login_error"></ol>
+					<ul class="list-group ">
+						<li class="list-group-item"><input type="text" placeholder="手机或者邮箱" id="login_user" name="login_user" autocomplete="off"/></li>
+						<li class="list-group-item"><input type="password" placeholder="密码" name="login_pass" autocomplete="off" /></li>
+						
+					</ul>
+					<button class="btn btn-default btn-block" type="submit">登录</button>
+				</form>
+				<div class="input-group">
+					<input type="checkbox" name="expires"  id="expires" checked="checked" />
+					<label for="#expires">记住我</label>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!--注册-->
+		<div class="container">
+			<div id="reg" class="  modal ">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<div class=" jumbotron modal-title">
+					<h3 class="text-center">注册知问</h3>
+					<p>与世界分享你的知识、经验和见解</p>
+				</div>
+				<form id="form">
+					<ol id="reg_error"></ol>
+					<ul class="list-group">
+						<li class="list-group-item"><input type="text" name="user" id="user" placeholder="账号" autocomplete="off"/></li>
+						<li class="list-group-item"><input type="password"name="pass" placeholder="密码" autocomplete="off"/></li>
+						<li class="list-group-item"><input type="text" name="email" placeholder="邮箱"/></li>
+						<li class="list-group-item ">
+							<label for="" class="pull-left">性别</label>
+							<div class="btn-group choose">
+							  <button class="btn btn-default active" type="button"><input type="button" name="sex" value="男" checked="checked" /> </button>
+							 
+							  <button class="btn btn-default" type="button"><input type="button" name="sex" value="女"  /> </button>
+							  
+							</div>
+						
+						</li>
+						<li class="list-group-item">
+                            <label for="" class="datetimepicker_label">生日</label>
+                            <div class="input-append date" id="datetimepicker" data-date="2016-05-15" data-date-format="dd-mm-yyyy">
+							    <input class="span2 time" size="16" type="text" placeholder="点击选择日期">
+							    <span class="add-on"><i class="icon-remove"></i></span>
+							    <span class="add-on"><i class="icon-th"></i></span>
+							</div>
+						</li>
+					</ul>
+					<button type="submit" class="btn btn-default btn-block submit">注册</button>
+				</form>
+			</div>
+		</div>
+		
+	
+		<!--提问-->
+		<div class="container">
+			<div id="question" class="modal fade">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<span>提问</span>
+						<button class="close" data-dismiss="modal">&times;</button>
+					</div>
+					
+				</div>
+				<form action="" class="form-group">
+					<input type="text" class="form-control" name="title" id="title" placeholder="写下你的问题"/>
+					<label for="">问题说明（可选）：</label>
+
+						<span class="glyphicon glyphicon-picture pull-right picture"></span>
+						<input type="file" class="hide" id="file"/>
+						<input type="button" class="form-control hidden-lg hidden-sm hidden-md btn btn-primary" id="mobile_up_img" value="上传图片" />
+					<textarea name="question" class="form-control" rows="8" cols="" placeholder="请输入问题描述" ></textarea>
+					<hr />
+
+				</form>
+				<button class="btn btn-primary pull-right push" type="submit">提交</button>
+			</div>
+		</div>
+
+		<!--loadding-->
+		<div class="container">
+			<div id="loadding" class=" modal fade">
+				<span>正在提交</span>
+			</div>
+		</div>
+
+		<!--用户头像自定义上传的模态框-->
+	    <div  class="container">
+           <div class="panel panel-primary modal" id="upload_user_img">
+                <div class="panel-heading">
+                    上传头像
+                    <span class="close" data-dismiss="modal">&times;</span>
+                </div>
+               <div class="panel-body">
+                   <div class="thumbnail">
+                       <img src="img/1.jpg" alt="" id="preview_user_img">
+                   </div>
+                   <div class="input-group">
+                       <input type="text" class="form-control" placeholder="选择图像文件上传作为头像">
+                        <span class="input-group-addon btn btn-default" id="upload_img">浏览</span>
+                       <input type="file" class="hide" id="upload_user_img_file" />
+                   </div>
+               </div>
+           </div>
+        </div>
+
+        <footer id="footer">
+
+            <div class="navbar navbar-default">
+                <div class="container">
+                     <h3 class="text-center">本站点由武汉纺织大学 软件工程 周华 制作</h3>
+                </div>
+            </div>
+
+
+        </footer>
+	</body>
+</html>

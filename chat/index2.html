@@ -1,0 +1,39 @@
+<!DOCTYPE html >
+<html >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>upload</title>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+
+<div class="box">
+    <input type="file" value="选择文件" id="file">
+    <button type="submit" id="btn">上传</button>
+</div>
+
+
+<script>
+    var oInp=document.getElementById("file");
+    var btn=document.getElementById("btn");
+    oInp.onchange=function () {
+        var oFile=oInp.files[0];
+        var name=oFile.name;
+        var size=oFile.size;
+        var type=oFile.type;
+        console.log(name+','+size+','+type.replace('image/',''));
+    };
+    btn.onclick=function () {
+        console.log($("#file").prop("files"));
+        var vfd=new FormData();
+        vfd.append($("#file").prop("files")[0].name,$("#file").prop("files")[0]);
+        console.log(vfd);
+        $.ajax({
+            type:'post',
+            url:'post_file.php',
+            data:vfd
+        })
+    }
+</script>
+</body>
+</html>
